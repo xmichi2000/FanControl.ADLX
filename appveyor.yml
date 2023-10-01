@@ -1,5 +1,6 @@
 version: 1.0.{build}
-image: Visual Studio 2019
+build_cloud: DESKTOP-9IITOL1
+image: Windows
 
 # Definition des Build-Skripts
 build_script:
@@ -27,7 +28,7 @@ test_script:
 #      branch: main
 
 artifacts:
-  - path: \bin\Debug\FanControl.ADLX.dll
+  - path: \bin\Release
     name: FanControl.ADLX.dll
 
 
