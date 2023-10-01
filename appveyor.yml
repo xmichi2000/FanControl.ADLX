@@ -15,16 +15,16 @@ test_script:
   - dotnet test --configuration Release
 
 # Definition des Deploy-Skripts (Beispiel für Deployment auf GitHub Releases)
-deploy:
-  - provider: GitHub
-    release: v1.0.0  # Ersetzen Sie durch Ihre Release-Version
-    description: "Veröffentlichte Version $APPVEYOR_BUILD_VERSION"
-    auth_token:
-      secure: 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  # Ersetzen Sie durch Ihr GitHub-Token
-    artifact: /bin/Release/*
-    draft: true
-    on:
-      branch: main
+# deploy:
+#  - provider: GitHub
+#    release: v1.0.0  # Ersetzen Sie durch Ihre Release-Version
+#    description: "Veröffentlichte Version $APPVEYOR_BUILD_VERSION"
+#    auth_token:
+#      secure: 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  # Ersetzen Sie durch Ihr GitHub-Token
+#    artifact: /bin/Release/*
+#    draft: true
+#    on:
+#     branch: main
 
 # Optionale Konfigurationen
 # cache:
