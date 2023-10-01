@@ -20,7 +20,7 @@ deploy:
     release: v1.0.0  # Ersetzen Sie durch Ihre Release-Version
     description: "Veröffentlichte Version $APPVEYOR_BUILD_VERSION"
     auth_token:
-      secure: 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  # Ersetzen Sie durch Ihr GitHub-Token
+      secure: s1MYxNS3T3snvMRyAT9IA3qfTgqqMuu1bweyH+Ci/BmnfYekxWPKST0z9iBvJk0b  # Ersetzen Sie durch Ihr GitHub-Token
     artifact: /bin/Release/*
     draft: true
     on:
