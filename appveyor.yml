@@ -1,0 +1,40 @@
+version: 1.0.{build}
+image: Visual Studio 2019
+
+# Definition des Build-Skripts
+build_script:
+  - git clone -q --branch=main https://github.com/xMichi2000/FanControl.ADLX.git C:\projects\fancontrol-adlx
+  - cd C:\projects\fancontrol-adlx
+  - git checkout -qf ee0ff5c0b7e4dc7a52ff244669a7e0fc0d4ae20c
+  - dotnet restore
+  - msbuild FanControl.ADLX.sln /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+# Definition des Test-Skripts
+test_script:
+  - cd C:\projects\fancontrol-adlx
+  - dotnet test --configuration Release
+
+# Definition des Deploy-Skripts (Beispiel für Deployment auf GitHub Releases)
+deploy:
+  - provider: GitHub
+    release: v1.0.0  # Ersetzen Sie durch Ihre Release-Version
+    description: "Veröffentlichte Version $APPVEYOR_BUILD_VERSION"
+    auth_token:
+      secure: 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  # Ersetzen Sie durch Ihr GitHub-Token
+    artifact: /bin/Release/*
+    draft: true
+    on:
+      branch: main
+
+# Optionale Konfigurationen
+# cache:
+#   - C:\ProgramData\chocolatey\lib\*
+#   - C:\Program Files\dotnet\sdk\NuGetFallbackFolder
+
+# environment:
+#   YOUR_ENV_VARIABLE: "Ihre Wert hier"
+
+# notifications:
+#   - provider: Slack
+#     incoming_webhook: "Ihre Slack Webhook URL"
+#     channel: "#ci"
