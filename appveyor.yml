@@ -16,7 +16,7 @@ test_script:
 
 # Definition des Deploy-Skripts (Artefakt erstellen)
 artifacts:
-  - path: \bin\Release\FanControl.ADLX.dll
+  - path: \FanControl.ADLX.dll
     name: FanControl.ADLX.dll
 
 # Definition des Deploy-Skripts (Beispiel für Deployment auf GitHub Releases)
