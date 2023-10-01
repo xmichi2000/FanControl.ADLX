@@ -27,7 +27,7 @@ test_script:
 #      branch: main
 
 artifacts:
-  - path: \bin\Release\FanControl.ADLX.dll
+  - path: \bin\Debug\FanControl.ADLX.dll
     name: FanControl.ADLX.dll
 
 
