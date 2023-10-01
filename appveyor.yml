@@ -14,10 +14,8 @@ test_script:
   - cd C:\projects\fancontrol-adlx
   - dotnet test --configuration Release
 
-
-
 # Definition des Deploy-Skripts (Beispiel für Deployment auf GitHub Releases)
- deploy:
+deploy:
   - provider: GitHub
     release: v1.0.0  # Ersetzen Sie durch Ihre Release-Version
     description: "Veröffentlichte Version $APPVEYOR_BUILD_VERSION"
@@ -26,7 +24,7 @@ test_script:
     artifact: /bin/Release/*
     draft: true
     on:
-     branch: main
+      branch: main
 
 # Optionale Konfigurationen
 # cache:
