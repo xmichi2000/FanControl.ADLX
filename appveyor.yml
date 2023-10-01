@@ -16,8 +16,9 @@ test_script:
 
 # Definition des Deploy-Skripts (Artefakt erstellen)
 artifacts:
-  - path: C:\projects\fancontrol-adlx\bin\Debug\net48\FanControl.ADLX.dll
+  - path: bin\Debug\net48\FanControl.ADLX.dll
     name: FanControl.ADLX.dll
+
 
 # Definition des Deploy-Skripts (Beispiel für Deployment auf GitHub Releases)
 # deploy:
