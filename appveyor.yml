@@ -14,6 +14,11 @@ test_script:
   - cd C:\projects\fancontrol-adlx
   - dotnet test --configuration Release
 
+# Definition des Deploy-Skripts (Artefakt erstellen)
+artifacts:
+  - path: \bin\Release\FanControl.ADLX.dll
+    name: FanControl.ADLX.dll
+
 # Definition des Deploy-Skripts (Beispiel für Deployment auf GitHub Releases)
 # deploy:
 #  - provider: GitHub
